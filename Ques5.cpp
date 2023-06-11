@@ -21,8 +21,24 @@ int minProductSum(std::vector<int>& nums1, std::vector<int>& nums2) {
 }
 
 int main() {
-    std::vector<int> nums1 = {5, 3, 4, 2};
-    std::vector<int> nums2 = {4, 2, 2, 5};
+    //std::vector<int> nums1 = {5, 3, 4, 2};
+    std::vector<int> nums1;
+    int num;
+    while (std::cin >> num) {
+        nums1.push_back(num);
+        if (std::cin.peek() == '\n') {
+            break;
+        }
+    }
+    //std::vector<int> nums2 = {4, 2, 2, 5};
+    std::vector<int> nums2;
+
+    while (std::cin >> num) {
+        nums2.push_back(num);
+        if (std::cin.peek() == '\n') {
+            break;
+        }
+    }
 
     int minProduct = minProductSum(nums1, nums2);
 

@@ -26,7 +26,15 @@ bool validMountainArray(std::vector<int>& arr) {
 }
 
 int main() {
-    std::vector<int> arr = {2, 1};
+    //std::vector<int> arr = {2, 1};
+    std::vector<int> arr;
+    int num;
+    while (std::cin >> num) {
+        arr.push_back(num);
+        if (std::cin.peek() == '\n') {
+            break;
+        }
+    }
     bool isValidMountain = validMountainArray(arr);
 
     cout << std::boolalpha << isValidMountain << std::endl;

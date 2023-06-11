@@ -23,8 +23,24 @@ std::vector<std::vector<int>> multiply(std::vector<std::vector<int>>& mat1, std:
 }
 
 int main() {
-    std::vector<std::vector<int>> mat1 = {{1, 0, 0}, {-1, 0, 3}};
-    std::vector<std::vector<int>> mat2 = {{7, 0, 0}, {0, 0, 0}, {0, 0, 1}};
+    //std::vector<std::vector<int>> mat1 = {{1, 0, 0}, {-1, 0, 3}};
+    std::vector<std::vector<int>> mat1;
+    int n1,n2;
+    while (std::cin >> n1>>n2) {
+        mat1.push_back({n1,n2});
+        if (std::cin.peek() == '\n') {
+            break;
+        }
+    }
+    //std::vector<std::vector<int>> mat2 = {{7, 0, 0}, {0, 0, 0}, {0, 0, 1}};
+    std::vector<std::vector<int>> mat2;
+
+    while (std::cin >> n1 >>n2) {
+        mat2.push_back({n1,n2});
+        if (std::cin.peek() == '\n') {
+            break;
+        }
+    }
 
     std::vector<std::vector<int>> result = multiply(mat1, mat2);
 

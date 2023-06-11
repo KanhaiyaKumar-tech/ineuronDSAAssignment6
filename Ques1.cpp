@@ -1,38 +1,41 @@
+#include <iostream>
 #include <vector>
-#include<iostream>
-#include <string>
-using namespace std;
+#include <algorithm>
 
-vector<int> findPermutation(std::string s) {
-    int n = s.length();
-    vector<int> perm(n + 1);
+std::vector<int> reconstructPermutation(std::string& s) {
+    int n = s.size();
+    std::vector<int> perm(n + 1);
 
-    int low = 0, high = 0;
-    for (int i = 0; i < n; i++) {
-        if (s[i] == 'I') {
-            perm[i] = low++;
-        } else {
-            perm[i] = high--;
-        }
+    // Initialize the permutation with sorted values
+    for (int i = 0; i <= n; ++i) {
+        perm[i] = i;
     }
 
-    perm[n] = low;
-    for (int i = 0; i < n + 1; i++) {
-        perm[i] -= high;
+    // Reconstruct the permutation based on the pattern of 'I' and 'D'
+    int left = 0, right = 0;
+    for (int i = 0; i < n; ++i) {
+        if (s[i] == 'I') {
+            std::reverse(perm.begin() + left, perm.begin() + right + 2);
+            left = i + 1;
+            right = i + 1;
+        } else {
+            right = i + 1;
+        }
     }
 
     return perm;
 }
 
 int main() {
-    string s ;
-    cin>>s;
-    vector<int> permutation = findPermutation(s);
+    std::string s ;
+    std::cin>>s;
+    std::vector<int> perm = reconstructPermutation(s);
 
-    for (int num : permutation) {
-        cout << num << " ";
+    std::cout << "Output: ";
+    for (int num : perm) {
+        std::cout << num << " ";
     }
+    std::cout << std::endl;
 
     return 0;
 }
-

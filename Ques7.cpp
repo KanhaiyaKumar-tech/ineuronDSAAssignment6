@@ -44,8 +44,8 @@ std::vector<std::vector<int>> generateMatrix(int n) {
 }
 
 int main() {
-    int n = 3;
-
+    int n ;
+    std::cin>>n;
     std::vector<std::vector<int>> matrix = generateMatrix(n);
 
     for (const auto& row : matrix) {

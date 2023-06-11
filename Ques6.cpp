@@ -37,7 +37,15 @@ std::vector<int> findOriginalArray(std::vector<int>& changed) {
 }
 
 int main() {
-    std::vector<int> changed = {1, 3, 4, 2, 6, 8};
+    //std::vector<int> changed = {1, 3, 4, 2, 6, 8};
+    std::vector<int> changed;
+    int num;
+    while (std::cin >> num) {
+        changed.push_back(num);
+        if (std::cin.peek() == '\n') {
+            break;
+        }
+    }
 
     std::vector<int> original = findOriginalArray(changed);
 

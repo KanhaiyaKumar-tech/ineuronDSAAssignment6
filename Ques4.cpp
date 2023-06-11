@@ -31,7 +31,15 @@ int findMaxLength(std::vector<int>& nums) {
 }
 
 int main() {
-    std::vector<int> nums = {0, 1};
+    //std::vector<int> nums = {0, 1};
+    std::vector<int> nums;
+    int num;
+    while (std::cin >> num) {
+        nums.push_back(num);
+        if (std::cin.peek() == '\n') {
+            break;
+        }
+    }
     int maxLength = findMaxLength(nums);
 
     cout << maxLength << std::endl;
