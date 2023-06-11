@@ -25,7 +25,8 @@ vector<int> findPermutation(std::string s) {
 }
 
 int main() {
-    string s = "IDID";
+    string s ;
+    cin>>s;
     vector<int> permutation = findPermutation(s);
 
     for (int num : permutation) {
